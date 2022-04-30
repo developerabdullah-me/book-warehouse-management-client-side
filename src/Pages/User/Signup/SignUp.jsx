@@ -1,12 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const SignUp = () => {
-
-    const handleRegister =async ( event )=>{
+    const navigate=useNavigate()
+    const location=useLocation()
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+      let from = location.state?.from?.pathname || "/";
+      if(user){
+        navigate(from, { replace: true });
+      }
+    const handleRegister = ( event )=>{
         event.preventDefault();
-       
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        console.log(name, email, password);
+        createUserWithEmailAndPassword(name, email, password)
     }
     return (
         <div>
@@ -30,10 +47,9 @@ const SignUp = () => {
            </div>
          </div>
        <form onSubmit={handleRegister}>
-         <input className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="name" placeholder="Name" required/>
+         <input className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="text" placeholder="Name" name="name" required/>
          <input className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="email" name="email" placeholder="type your email" required/>
          <input className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="password" name="password" placeholder="type your password" required/>
-         <input className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="password" name="password" placeholder="type your confirm password" required/>
          <input className='block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto'  type="submit" value="Register" />
        </form>
        </div>

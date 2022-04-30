@@ -1,8 +1,14 @@
+import { signOut } from "firebase/auth";
 import React, { useRef, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../../firebase.init";
 
 const Header = () => {
-  const [open,setOpen]=useState(false);
+  const [user] = useAuthState(auth);
+  const handelSignOut = () => {
+    signOut(auth);
+  };
     return (
         <div className="">
  
@@ -49,16 +55,7 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
   <li className="nav-item pr-2">
     <Link to='/about' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">About</Link>
   </li>
-  <li className="nav-item pr-2">
-    <Link to='/login' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Login</Link>
-  </li>
-  <li className="nav-item pr-2">
-    <Link to='/register' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Register</Link>
 
-
-
-  </li>
-  
 <li className="nav-item pr-2 dropdown  static">
           <li className=" cursor-pointer  transition duration-150 ease-in-out dropdown-toggle flex items-center whitespace-nowrap"  data-mdb-ripple="true" data-mdb-ripple-color="light" type="button" id="dropdownMenuButtonQ" data-bs-toggle="dropdown"
           aria-expanded="false">Best Product
@@ -204,11 +201,23 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
             </div>
           </div>
         </li>
+
+{/* register */}
+    <li className="nav-item pr-2">
+    <Link to='/login' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Login</Link>
+  </li>
+  <li className="nav-item pr-2">
+   { user? (
+     <button  className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" onClick={handelSignOut}>
+     signOut{" "}
+   </button>
+   ):(
+    <Link to='/register' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Register</Link>
+   )}
+  </li>
   
 </ul>
-
 </div>
-
 </div>
   </nav>
           
