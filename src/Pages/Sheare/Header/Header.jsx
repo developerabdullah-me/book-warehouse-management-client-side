@@ -44,16 +44,16 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
 <div className="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent">
 <ul className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto">
   <li className="nav-item px-2">
-    <Link to='/' className="nav-link active" aria-current="page">Blog</Link>
+    <Link to='/blog' className="nav-link active" aria-current="page">Blog</Link>
   </li>
   <li className="nav-item pr-2">
-    <Link to='/' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">About</Link>
+    <Link to='/about' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">About</Link>
   </li>
   <li className="nav-item pr-2">
-    <Link to='/' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Login</Link>
+    <Link to='/login' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Login</Link>
   </li>
   <li className="nav-item pr-2">
-    <Link to='/' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Register</Link>
+    <Link to='/register' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Register</Link>
 
 
 
@@ -61,7 +61,7 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
   
 <li className="nav-item pr-2 dropdown  static">
           <li className=" cursor-pointer  transition duration-150 ease-in-out dropdown-toggle flex items-center whitespace-nowrap"  data-mdb-ripple="true" data-mdb-ripple-color="light" type="button" id="dropdownMenuButtonQ" data-bs-toggle="dropdown"
-          aria-expanded="false">Mega menu
+          aria-expanded="false">Best Product
             <svg  aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" className="w-2 ml-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
               <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
             </svg>
@@ -197,16 +197,7 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
                       <p><u>15.07.2021</u></p>
                     </div>
                  
-                
-                    <div className="shrink-0">
-                      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" className="w-20 shadow-lg rounded" alt="Hollywood Sign on The Hill"/>
-                    </div>
-                    <div className="grow ml-4">
-                      <p className="mb-1 font-semibold">Sed ut perspiciatis unde omnis</p>
-                      <p><u>15.07.2021</u></p>
-                    </div>
-               
-                  
+    
                   </li>
                 </div>
               </div>

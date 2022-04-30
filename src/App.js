@@ -1,6 +1,12 @@
 
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Services from './Pages/Home/Services/Services';
+import Blog from './Pages/Blog/Blog';
+import Home from './Pages/Home/Home/Home';
+import About from './Pages/About/About';
+import Login from './Pages/User/Login/Login'
+import SignUp from './Pages/User/Signup/SignUp'
+
 import Header from './Pages/Sheare/Header/Header';
 
 
@@ -9,20 +15,14 @@ function App() {
   return (
     <div className="">
 <Header></Header>
-<Services></Services>
-<h1 className="text-3xl">hello world</h1>
 
-
-
-
-
-<div>
-
-
-
-
-  
-</div>
+<Routes>
+  <Route path="/"elements={<Home></Home>}></Route>
+  <Route path="/blog"  element={<Blog></Blog>}></Route>
+  <Route path='/about' element={<About></About>}></Route>
+  <Route path='/login' element={<Login></Login>}></Route>
+  <Route path='/register' element={<SignUp></SignUp>}></Route>
+</Routes>
     </div>
   );
 }
