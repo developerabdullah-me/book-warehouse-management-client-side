@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const handleLogin =async ( event )=>{
@@ -15,7 +16,7 @@ const Login = () => {
        <div className ='mx-auto'>
              <div className ='text-center'>
             
-
+        <SocialLogin></SocialLogin>
              </div>
              
           <div>

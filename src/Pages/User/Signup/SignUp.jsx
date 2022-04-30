@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const SignUp = () => {
 
@@ -16,7 +17,7 @@ const SignUp = () => {
        <div className ='mx-auto'>
              <div className ='text-center'>
             
-
+             <SocialLogin></SocialLogin>
              </div>
              
           <div>
