@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Service = (props) => {
 const {name,img,price,quantity,description}=props.service;
@@ -9,7 +10,7 @@ const {name,img,price,quantity,description}=props.service;
             <p>price: ${price}</p>
             <p>quantity: {quantity}</p>
             <p>{description}</p>
-            <button className="btn w-72">Inventory</button>
+           <Link to='/manageInventory' className="btn w-72">Manage Inventory</Link>
         </div>
     );
 };

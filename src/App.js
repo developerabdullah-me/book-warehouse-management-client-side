@@ -8,6 +8,8 @@ import Login from './Pages/User/Login/Login'
 import SignUp from './Pages/User/Signup/SignUp'
 import Home from './Pages/Home/Home/Home'
 import Header from './Pages/Sheare/Header/Header';
+import ManageInventory from './Pages/ManageInventory/ManageInventory';
+import AddItems from './Pages/AddItems/AddItems';
 
 
 
@@ -21,6 +23,9 @@ function App() {
 
   <Route path="/blog"  element={<Blog></Blog>}></Route>
   <Route path='/about' element={<About></About>}></Route>
+  <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
+  <Route path='/serviceAdd' element={<AddItems></AddItems>}></Route>
+  <Route path='/order'></Route>
   <Route path='/login' element={<Login></Login>}></Route>
   <Route path='/register' element={<SignUp></SignUp>}></Route>
 </Routes>

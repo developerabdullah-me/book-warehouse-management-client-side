@@ -49,6 +49,7 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
 <Link to='/' className="text-xl text-black">Navbar</Link>
 <div className="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent">
 <ul className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto">
+ 
   <li className="nav-item px-2">
     <Link to='/blog' className="nav-link active" aria-current="page">Blog</Link>
   </li>
@@ -56,6 +57,17 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
     <Link to='/about' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">About</Link>
   </li>
 
+{ user && <>
+  <li className="nav-item px-2">
+    <Link to='/manageInventory' className="nav-link active" aria-current="page">ManageInventory</Link>
+  </li>
+  <li className="nav-item px-2">
+    <Link to='/serviceAdd' className="nav-link active" aria-current="page">serviceAdd</Link>
+  </li>
+  <li className="nav-item px-2">
+    <Link to='/order' className="nav-link active" aria-current="page">order</Link>
+  </li>
+</>}
 <li className="nav-item pr-2 dropdown  static">
           <li className=" cursor-pointer  transition duration-150 ease-in-out dropdown-toggle flex items-center whitespace-nowrap"  data-mdb-ripple="true" data-mdb-ripple-color="light" type="button" id="dropdownMenuButtonQ" data-bs-toggle="dropdown"
           aria-expanded="false">Best Product
