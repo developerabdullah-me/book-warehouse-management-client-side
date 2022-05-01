@@ -9,6 +9,7 @@ const {name,img,price,quantity,description}=props.service;
             <p>price: ${price}</p>
             <p>quantity: {quantity}</p>
             <p>{description}</p>
+            <button className="btn w-72">Inventory</button>
         </div>
     );
 };
