@@ -7,14 +7,21 @@ import facebook from '../SocialLogin/sosial-logo/Facebook-logo.png'
 import auth from '../../../firebase.init';
 import Loding from '../../Sheare/Loding/Loding';
 const SocialLogin = () => {
-    const [signInWithGoogle, userGoogle, loadinguserGoogle, erroruserGoogle] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, userGoogle, loadinguserGoogle, errorGoogle] = useSignInWithGoogle(auth);
     const [signInWithGithub, userGithub, loadingGithub, errorGithub] = useSignInWithGithub(auth);
 
     if(loadinguserGoogle || loadingGithub ){
         return <Loding></Loding>
       }
+
+    //   let elementErrors ;
+    //   if (errorGithub || errorGoogle  ) {
+    //       toast.error(<> {errorGithub?.message} {errorGithub?.message} </>)
+             
+    //     }
     return (
         <div>
+           
              <button className=" m-4" stroke="currentColor" onClick={() => signInWithGoogle()}> <img  className="bg-white rounded-full p-1 " src={google} alt="" /> </button>
             <button className=" m-4" stroke="currentColor"><img className="bg-white rounded-full p-1 " src={facebook} alt="" /></button>
             <button className=" m-4" stroke="currentColor" onClick={() => signInWithGithub
