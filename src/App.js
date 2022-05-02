@@ -11,6 +11,7 @@ import AddItems from './Pages/AddItems/AddItems';
 import Update from './Pages/Update/Update';
 import Blog from './Pages/Blog/Blog'
 import RequireAuth from './Pages/Sheare/RequireAuth/RequireAuth';
+import Footer from './Pages/Sheare/Footer/Footer';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/register' element={<SignUp></SignUp>}></Route>
     </Routes>
+    <Footer></Footer>
         </div>
   );
 }

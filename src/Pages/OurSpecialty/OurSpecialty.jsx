@@ -25,10 +25,10 @@ const OurSpecialty = () => {
      
         }}
         modules={[Pagination,Autoplay]}
-        autoplay={{
-            delay: 1000,
-            disableOnInteraction: false
-        }}
+        // autoplay={{
+        //     delay: 1000,
+        //     disableOnInteraction: false
+        // }}
         className="mySwiper"
       >
       { 
