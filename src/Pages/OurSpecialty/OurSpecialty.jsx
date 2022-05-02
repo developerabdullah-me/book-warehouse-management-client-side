@@ -4,24 +4,31 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./OurSpecialty.css";
-import { Pagination } from "swiper";
+import { Autoplay, Pagination } from "swiper";
+import 'swiper/css/autoplay'
 import useServices from "../Sheare/Usedata/UseData";
 
 
 const OurSpecialty = () => {
     const [services,setServices]=useServices()
     return (
-        <div className="mt-16">
+        <div className="mt-16 px-16">
              <h1 className="text-4xl text-center">Best Sellers</h1>
              <p className="text-center py-1">This product is top sells in the year of {(new Date().getFullYear())}</p>
-          <div>
+          <div data-aos="fade-left">
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
+        loop={true}
         pagination={{
           clickable: true,
+     
         }}
-        modules={[Pagination]}
+        modules={[Pagination,Autoplay]}
+        autoplay={{
+            delay: 1000,
+            disableOnInteraction: false
+        }}
         className="mySwiper"
       >
       { 
