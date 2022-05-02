@@ -2,6 +2,7 @@ import React from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loding from '../../Sheare/Loding/Loding';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const SignUp = () => {
@@ -13,6 +14,9 @@ const SignUp = () => {
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
+      if(loading ){
+        return <Loding></Loding>
+      }
       let from = location.state?.from?.pathname || "/";
       if(user){
         navigate(from, { replace: true });
@@ -28,12 +32,9 @@ const SignUp = () => {
     return (
         <div>
           <div className=" mx-auto">
-       
        <h1 className='text-center'>please register</h1>
-      
        <div className ='mx-auto'>
              <div className ='text-center'>
-            
              <SocialLogin></SocialLogin>
              </div>
              

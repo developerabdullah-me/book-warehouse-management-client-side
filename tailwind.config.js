@@ -5,5 +5,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [ require('tw-elements/dist/plugin'),require("daisyui")],
+  plugins:  [require("daisyui"),require('tw-elements/dist/plugin')],
 }

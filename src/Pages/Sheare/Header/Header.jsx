@@ -66,6 +66,9 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
     <Link to='/serviceAdd' className="nav-link active" aria-current="page">serviceAdd</Link>
   </li>
   <li className="nav-item px-2">
+    <Link to='/update' className="nav-link active" aria-current="page">Update</Link>
+  </li>
+  <li className="nav-item px-2">
     <Link to='/order' className="nav-link active" aria-current="page">order</Link>
   </li>
 </>}

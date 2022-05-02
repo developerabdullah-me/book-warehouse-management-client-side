@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Service from '../../Service';
 import useServices from '../../Sheare/Usedata/UseData';
 
@@ -14,6 +15,10 @@ const Services = () => {
    services.slice(0,6).map(service => <Service service={service} key={service._id}></Service>)
    }
    </div>
+  <div className='w-full flex justify-center mt-10'data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom">
+  <Link to='/manageInventory' className="btn w-72" >ManageInventory</Link>
+  </div>
         </div>
     );
 };

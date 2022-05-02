@@ -16,6 +16,7 @@ const Login = () => {
       ] = useSignInWithEmailAndPassword(auth);
       if (user) {
         navigate("/home");
+        console.log(user);
       }
     const handleLogin =async ( event )=>{
         event.preventDefault();
