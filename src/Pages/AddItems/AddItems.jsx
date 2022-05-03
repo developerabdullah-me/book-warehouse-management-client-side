@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const AddItems = () => {
@@ -9,7 +10,7 @@ const AddItems = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data =>{
       console.log(data);
-      const url=`http://localhost:5000/services`
+      const url=`http://localhost:5000/InventoryItems`
       fetch(url, {
     method: 'POST',
     headers: {
@@ -20,13 +21,16 @@ const AddItems = () => {
   .then(response => response.json())
   .then(data => {
     console.log('Success:', data);
+    toast.success('Success',data)
+    
   })
+ 
     }
     return (
      <div className="mx-auto w-96 mt-40">
      <form className='' onSubmit={handleSubmit(onSubmit)}>
       <input className='mb-2 outline-none w-72 bg-slate-100 py-3 px-2 ' placeholder='name' {...register("name" )} />
-      <input className='mb-2 block outline-none w-72 bg-slate-100 py-3 px-2 ' placeholder='price' type="email" {...register("email")} />
+      <input className='mb-2 block outline-none w-72 bg-slate-100 py-3 px-2 ' value={user.email} placeholder='email' type="email" {...register("email")} />
       <input className='mb-2 block outline-none w-72 bg-slate-100 py-3 px-2 ' placeholder='price' type="number" {...register("price")} />
       <input className='mb-2 block outline-none w-72 bg-slate-100 py-3 px-2 ' placeholder='quantity' type="number" {...register("quantity")} />
       <input className='mb-2 block outline-none w-72 bg-slate-100 py-3 px-2 ' placeholder='img' type="text" {...register("img")} />

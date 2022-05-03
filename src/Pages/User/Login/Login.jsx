@@ -58,7 +58,7 @@ const Login = () => {
              
           <div>
            
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center placeholder-red-300">
             <div className="h-1 bg-slate-700 w-28 rounded "></div>
              <p className="px-2">or</p>
              <div className="h-1 bg-slate-700 w-28 rounded "></div>

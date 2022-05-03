@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Service = (props) => {
+const InventoryItem = (props) => {
 const {name,img,price,quantity,description}=props.service;
     return (
         <div className="">
@@ -19,4 +19,4 @@ const {name,img,price,quantity,description}=props.service;
     );
 };
 
-export default Service;
+export default InventoryItem;

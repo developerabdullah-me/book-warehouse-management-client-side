@@ -12,6 +12,7 @@ import Update from './Pages/Update/Update';
 import Blog from './Pages/Blog/Blog'
 import RequireAuth from './Pages/Sheare/RequireAuth/RequireAuth';
 import Footer from './Pages/Sheare/Footer/Footer';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Route path='/register' element={<SignUp></SignUp>}></Route>
     </Routes>
     <Footer></Footer>
+    <ToastContainer></ToastContainer>
         </div>
   );
 }

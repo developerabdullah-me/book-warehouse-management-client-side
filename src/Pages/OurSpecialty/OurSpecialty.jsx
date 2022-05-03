@@ -6,11 +6,11 @@ import "swiper/css/pagination";
 import "./OurSpecialty.css";
 import { Autoplay, Pagination } from "swiper";
 import 'swiper/css/autoplay'
-import useServices from "../Sheare/Usedata/UseData";
+import useInventoryItems from "../Sheare/useInventoryItems/useInventoryItems";
 
 
 const OurSpecialty = () => {
-    const [services,setServices]=useServices()
+    const [InventoryItems,setInventoryItems]=useInventoryItems()
     return (
         <div className="mt-16 px-16">
              <h1 className="text-4xl text-center">Best Sellers</h1>
@@ -32,7 +32,7 @@ const OurSpecialty = () => {
         className="mySwiper"
       >
       { 
-            services.slice(0,6).map(service =>  <SwiperSlide className="border mt-11 mb-10  hover:shadow-lg cursor-pointer" service={service._id}>
+            InventoryItems.slice(0,6).map(service =>  <SwiperSlide className="border mt-11 mb-10  hover:shadow-lg cursor-pointer" service={service._id}>
                
                <div className="pb-16">
                <img src={service.img} alt="" />
