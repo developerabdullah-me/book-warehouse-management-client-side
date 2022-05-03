@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loding from '../../Sheare/Loding/Loding';
@@ -13,7 +13,7 @@ const SignUp = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
       if(loading ){
         return <Loding></Loding>
       }
@@ -23,11 +23,11 @@ const SignUp = () => {
       }
     const handleRegister = ( event )=>{
         event.preventDefault();
-        const name = event.target.name.value;
+       
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(name, email, password);
-        createUserWithEmailAndPassword(name, email, password)
+        console.log( email, password);
+        createUserWithEmailAndPassword( email, password)
     }
     return (
         <div>

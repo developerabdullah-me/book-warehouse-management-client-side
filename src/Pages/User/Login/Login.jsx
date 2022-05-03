@@ -1,10 +1,12 @@
-import React, { useRef } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import React, { useRef, useState } from 'react';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate,useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
-
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
+
     const emailRef=useRef('')
     const passwordRef=useRef('')
     const location=useLocation()
@@ -15,21 +17,35 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
-    
+      const [sendPasswordResetEmail, sending, resetPasswordError] = useSendPasswordResetEmail(
+        auth
+      );
       let from = location.state?.from?.pathname || "/";
       
       if(user){
         navigate(from, { replace: true });
       }
 
-    const handleLogin = ( event )=>{
+    const handleLogin = async( event )=>{
         event.preventDefault();
         const email=emailRef.current.value;
         const password=passwordRef.current.value;
         signInWithEmailAndPassword(email,password)
     }
+    const handelResetPassword=async (event) => {
+      event.preventDefault();
+      const email=emailRef.current.value;
+     if(email){
+      await sendPasswordResetEmail(email)
+      toast.error('sending reset password success')
+     }
+     else{
+       toast.error('place valid email')
+     }
+    }
     return (
         <div>
+          <ToastContainer/>
             <div className=" mx-auto">
        
        <h1 className='text-center'>please login</h1>
@@ -50,13 +66,20 @@ const Login = () => {
            </div>
          </div>
        <form onSubmit={handleLogin}>
-         <input className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="text"  name="name" placeholder="Name" required/>
-         <input ref={emailRef} className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="email" name="email" placeholder="type your email" required/>
-         <input ref={passwordRef} className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="password" name="password" placeholder="type your password" required/>
-         <input className='block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto'  type="submit" value="Login" />
+        
+         <input
+          ref={emailRef} className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="email" name="email" placeholder="type your email" required/>
+         <input
+          ref={passwordRef} className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="password" name="password" placeholder="type your password" required/>
+         <input
+          className='block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto'  type="submit" value="Login" />
        </form>
+      
        </div>
- 
+       <button className="mx-auto block outline-none text-red-500"
+        onClick={handelResetPassword}>
+        Reset password
+      </button>
        <div className='pt-2 font-medium text-center'>
       <p> first time registration ?   <Link to='/register' className='border-b'>please register </Link></p>
        </div>
