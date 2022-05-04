@@ -27,8 +27,12 @@ const SocialLogin = () => {
 
       let elementErrors ;
       if (errorGithub || errorGoogle || facebookError) {
-          toast.error("alert-warning")
+        toast.error('alert-warning')
+        
              
+        }
+        else{
+          toast.success("success")
         }
     return (
         <div>

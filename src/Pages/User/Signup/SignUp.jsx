@@ -48,10 +48,11 @@ const SignUp = () => {
            </div>
          </div>
        <form onSubmit={handleRegister}>
-         <input className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="text" placeholder="Name" name="name" required/>
+         <input className=" block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="text" placeholder="Name" name="name" required/>
          <input className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="email" name="email" placeholder="type your email" required/>
          <input className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="password" name="password" placeholder="type your password" required/>
          <input className='block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto'  type="submit" value="Register" />
+         
        </form>
        </div>
  
@@ -60,6 +61,7 @@ const SignUp = () => {
        </div>
        
      </div>
+
         </div>
     );
 };

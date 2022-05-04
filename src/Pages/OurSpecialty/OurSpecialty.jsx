@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import "./OurSpecialty.css";
 import { Autoplay, Pagination } from "swiper";
 import 'swiper/css/autoplay'
-import useInventoryItems from "../Sheare/useInventoryItems/useInventoryItems";
+import useInventoryItems from "../Sheare/UseInventoryItems/UseInventoryItems";
 
 
 const OurSpecialty = () => {
