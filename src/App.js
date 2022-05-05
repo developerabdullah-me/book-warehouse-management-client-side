@@ -11,8 +11,11 @@ import AddItems from './Pages/AddItems/AddItems';
 import Update from './Pages/Update/Update';
 import Blog from './Pages/Blog/Blog'
 import RequireAuth from './Pages/Sheare/RequireAuth/RequireAuth';
-import Footer from './Pages/Sheare/Footer/Footer';
+
 import { ToastContainer } from 'react-toastify';
+import Footer from './Pages/Sheare/Footer/Footer';
+import Programing from './Pages/Programing/Programing';
+
 
 function App() {
   return (
@@ -24,14 +27,15 @@ function App() {
     
       <Route path="/blog"  element={<Blog></Blog>}></Route>
       <Route path='/about' element={<About></About>}></Route>
-      <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
-      <Route path='/serviceAdd' element={<AddItems></AddItems>}></Route>
+      <Route path='/manageInventory' element={<RequireAuth><ManageInventory></ManageInventory></RequireAuth>}></Route>
+      <Route path='/serviceAdd' element={<RequireAuth><AddItems></AddItems></RequireAuth>}></Route>
       <Route path='/order'></Route>
       <Route path='/update'element={<RequireAuth><Update></Update></RequireAuth>}></Route>
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/register' element={<SignUp></SignUp>}></Route>
+      <Route path='/programing' element={<Programing></Programing>}></Route>
     </Routes>
-    <Footer></Footer>
+   <Footer></Footer>
     <ToastContainer></ToastContainer>
         </div>
   );

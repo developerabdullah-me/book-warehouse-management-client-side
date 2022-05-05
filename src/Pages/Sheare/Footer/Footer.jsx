@@ -1,31 +1,32 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import Facebook from '../../User/SocialLogin/sosial-logo/Facebook-logo.png'
+import github from '../../User/SocialLogin/sosial-logo/github-log.png'
+import twitter from '../../User/SocialLogin/sosial-logo/twitter-logo.png'
+import linkedin from '../../User/SocialLogin/sosial-logo/linkedin.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-neutral text-neutral-content ">
-  <div>
-    <span className="footer-title">InventoryItems</span> 
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
+      <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+  <div className="grid grid-flow-col gap-4">
+    <Link to='/About' className="link link-hover">About</Link> 
+    <Link  to={`https://twitter.com/devabdullah_me`} className="link link-hover">Contact</Link> 
+    <Link to='https://twitter.com/devabdullah_me' className="link link-hover">Jobs</Link> 
+    <Link to='https://twitter.com/devabdullah_me' className="link link-hover">Press</Link> 
   </div> 
   <div>
-    <span className="footer-title">Company</span> 
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
+    <div className="grid grid-flow-col gap-4">
+      <a className="bg-white w-8 rounded-full" src="" href="https://twitter.com/devabdullah_me"> <img src={Facebook} alt="hq" /> </a> 
+      <a className="bg-white w-8 rounded-full" src="" href="https://twitter.com/devabdullah_me"> <img src={twitter} alt="" /> </a> 
+      <a className="bg-white w-8 rounded-full" src="" href="https://www.linkedin.com/in/developerabdullah-me"> <img src={linkedin} alt="" /> </a> 
+      <a className="bg-white w-8 rounded-full" src="" href="https://github.com/developerabdullah-me"> <img src={github} alt="" /> </a> 
+     
+    </div>
   </div> 
   <div>
-    <span className="footer-title">Legal</span> 
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
+  <p>Copyright © All right reserved by developerabdullah-me{(new Date().getFullYear())}</p>
   </div>
 </footer>
-
         </div>
     );
 };

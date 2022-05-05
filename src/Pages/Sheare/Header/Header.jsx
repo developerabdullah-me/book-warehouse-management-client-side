@@ -11,7 +11,7 @@ const Header = () => {
   };
   const [InventoryItems,setInventoryItems]=useInventoryItems()
     return (
-        <div className="">
+        <div className=" sticky-top">
  
 
  <nav className="
@@ -24,13 +24,12 @@ py-4
 
 hover:text-gray-700
 focus:text-gray-700
-shadow-lg
 navbar navbar-expand-lg 
 ">
 <div className="container-fluid w-full flex flex-wrap items-center justify-between px-6">
 <button className="
     navbar-toggler
-  text-gray-500
+  
     border-0
     hover:shadow-none hover:no-underline
     py-2
@@ -46,44 +45,42 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
   </path>
 </svg>
 </button>
-<Link to='/' className="text-xl text-black">Navbar</Link>
+<Link to='/' className="text-xl text-black">Books warehouse</Link>
 <div className="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent">
 <ul className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto">
  
   <li className="nav-item px-2">
-    <Link to='/blog' className="nav-link active" aria-current="page">Blog</Link>
+    <Link to='/blog' className="nav-link active hover:border-b-4 " aria-current="page">Blog</Link>
   </li>
-  <li className="nav-item pr-2">
-    <Link to='/about' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">About</Link>
-  </li>
+ 
 
 { user && <>
   <li className="nav-item px-2">
-    <Link to='/manageInventory' className="nav-link active" aria-current="page">ManageInventory</Link>
+    <Link to='/manageInventory' className="nav-link active hover:border-b-4 " aria-current="page">ManageInventory</Link>
   </li>
   <li className="nav-item px-2">
-    <Link to='/serviceAdd' className="nav-link active" aria-current="page">serviceAdd</Link>
+    <Link to='/serviceAdd' className="nav-link active hover:border-b-4 " aria-current="page">serviceAdd</Link>
   </li>
   <li className="nav-item px-2">
-    <Link to='/update' className="nav-link active" aria-current="page">Update</Link>
+    <Link to='/update' className="nav-link active hover:border-b-4 " aria-current="page">Update</Link>
   </li>
   <li className="nav-item px-2">
-    <Link to='/order' className="nav-link active" aria-current="page">order</Link>
+    <Link to='/order' className="nav-link active hover:border-b-4 " aria-current="page">order</Link>
   </li>
 </>}
 
 
 {/* register */}
-    <li className="nav-item pr-2">
-    <Link to='/login' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Login</Link>
-  </li>
+    {/* <li className="nav-item pr-2">
+    <Link to='/login' className="nav-link text-black hover:text-gray-700 focus:text-gray-700 p-0">Login</Link>
+  </li> */}
   <li className="nav-item pr-2">
    { user? (
-     <button  className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" onClick={handelSignOut}>
+     <button  className="nav-link text-black hover:text-gray-700 focus:text-gray-700 p-0" onClick={handelSignOut}>
      signOut{" "}
    </button>
    ):(
-    <Link to='/register' className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Register</Link>
+    <Link to='/register' className="nav-link text-black hover:text-gray-700 focus:text-gray-700 p-0">Register</Link>
    )}
   </li>
   

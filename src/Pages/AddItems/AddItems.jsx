@@ -27,8 +27,9 @@ const AddItems = () => {
  
     }
     return (
-     <div className="mx-auto w-96 mt-40">
-     <form className='' onSubmit={handleSubmit(onSubmit)}>
+     <div className="mx-auto w-full mt-20 py-10">
+<h1 className='text-center text-4xl py-5'>Places Added Your Best Book</h1> 
+     <form className=' grid justify-center' onSubmit={handleSubmit(onSubmit)}>
       <input className='mb-2 outline-none w-72 bg-slate-100 py-3 px-2 ' placeholder='name' {...register("name" )} />
       <input className='mb-2 block outline-none w-72 bg-slate-100 py-3 px-2 ' value={user.email} placeholder='email' type="email" {...register("email")} />
       <input className='mb-2 block outline-none w-72 bg-slate-100 py-3 px-2 ' placeholder='price' type="number" {...register("price")} />

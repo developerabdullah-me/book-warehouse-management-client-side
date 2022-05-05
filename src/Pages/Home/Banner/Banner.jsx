@@ -4,7 +4,8 @@ const Banner = () => {
     return (
         <div>
             <div className="banner-background ">
-               <h1 className='text-4xl font-bold pl-10 text-white py-48'> Welcome to Our warehouse  InventoryItems</h1>
+               <h1 className='md:text-4xl md:font-bold md:pl-44  text-white md:py-48'> Welcome to Our Book warehouse  </h1>
+
             </div>
   
         </div>

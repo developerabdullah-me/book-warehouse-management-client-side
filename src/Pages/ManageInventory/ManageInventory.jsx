@@ -9,6 +9,7 @@ const ManageInventory = () => {
 
  const productDeleteHandle=id=>{
     const proceed = window.confirm('Are you sure?');
+
         if(proceed){
             const url = `http://localhost:5000/InventoryItems/${id}`;
             fetch(url, {
@@ -17,7 +18,7 @@ const ManageInventory = () => {
             .then(res => res.json())
             .then(data => {
                 const remaining = InventoryItems.filter(InventoryItems => InventoryItems._id !== id);
-                setInventoryItems(remaining);
+                   setInventoryItems(remaining);
             })
         }
  }
@@ -30,16 +31,16 @@ const ManageInventory = () => {
         </p>
       </div>
 
-      <div className="flex justify-end mb-4">
+      <div className="text-center mb-4">
         <Link
           to="/serviceAdd"
-          className="card-shadow px-3 py-2 font-semibold hover:text-black"
+          className="btn px-3 py-2  w-48"
         >
           ADD NEW ITEM
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-3 gap-7 sm:grid-cols-3">
 
         {InventoryItems.map((inventoryProduct) => (
           <ProductInventory key={inventoryProduct._id} inventoryProduct={inventoryProduct}  
@@ -49,12 +50,6 @@ const ManageInventory = () => {
           </ProductInventory>
         ))}
 
-        {/* <ProductsInInventory
-          key={product._id}
-          inventoryProduct={inventoryProduct}
-        >
-          productDeleteHandle={productDeleteHandle}
-        </ProductsInInventory> */}
       </div>
     </div>
   );
