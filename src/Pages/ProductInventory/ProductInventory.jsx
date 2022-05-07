@@ -12,7 +12,7 @@ const handelUpdate=(id) => {
         <div >
           <div className="shadow-2xl px-3 py-2 w-80 mx-auto">
           <div className="">
-               <img className="" src={img} alt="" />
+               <img className="w-96 h-96" src={img} alt="" />
                <div className=" ml-4">
                <h1>{name}</h1>
                <p>$ <small>{price}</small> </p>

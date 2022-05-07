@@ -11,10 +11,10 @@ const handelUpdate=(id) => {
         <div className="">
   <div className="shadow-2xl px-3 py-2 w-80 mx-auto "data-aos="fade-down-right"
         >
-            <img src={img} alt="" />
+            <img className="w-96 h-96" src={img} alt="" />
             <h1>Name: {name}</h1>
             <p>price: ${price}</p>
-            <p>quantity: {quantity}</p>
+            <p>quantity: {quantity.slice(0,15)}</p>
             <p>{description}</p>
            <button onClick={() =>handelUpdate(_id)} className="btn w-72">Update</button>
         </div>

@@ -6,7 +6,11 @@
 
 # About
 
-
+* It is an exceptional book warehouse. There are different types of books. Those books are standard. Books that are constantly on sale.And if you want to sell your product easily then add it here
+* IN HOME You can see it on the `Home page` ,`Heder`,`Banner`, `Inventory Items`, `Bestsellers In las years` 
+* & `Manage inventory's Button `You can see all the products by clicking on this button,
+* After `Login`  or `sign Up`
+* There are other pages you can see when you visit this web site
 
 
 ## Most use langues & framework
