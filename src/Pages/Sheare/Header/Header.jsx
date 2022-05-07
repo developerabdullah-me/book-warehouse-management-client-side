@@ -59,6 +59,9 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
     <Link to='/manageInventory' className="nav-link active hover:border-b-4 " aria-current="page">ManageInventory</Link>
   </li>
   <li className="nav-item px-2">
+    <Link to='/myAddedItems' className="nav-link active hover:border-b-4 " aria-current="page">MyAdded Items</Link>
+  </li>
+  <li className="nav-item px-2">
     <Link to='/serviceAdd' className="nav-link active hover:border-b-4 " aria-current="page">serviceAdd</Link>
   </li>
   <li className="nav-item px-2">

@@ -15,6 +15,7 @@ import RequireAuth from './Pages/Sheare/RequireAuth/RequireAuth';
 import { ToastContainer } from 'react-toastify';
 import Footer from './Pages/Sheare/Footer/Footer';
 import Programing from './Pages/Programing/Programing';
+import MyAddededItems from './Pages/MyAddededItems/MyAddededItems';
 
 
 function App() {
@@ -29,8 +30,9 @@ function App() {
       <Route path='/about' element={<About></About>}></Route>
       <Route path='/manageInventory' element={<RequireAuth><ManageInventory></ManageInventory></RequireAuth>}></Route>
       <Route path='/serviceAdd' element={<RequireAuth><AddItems></AddItems></RequireAuth>}></Route>
-      <Route path='/order'></Route>
+      <Route path='/myAddedItems' element={<RequireAuth><MyAddededItems></MyAddededItems></RequireAuth>}></Route>
       <Route path='/update'element={<RequireAuth><Update></Update></RequireAuth>}></Route>
+      <Route path='/update/:Id'element={<RequireAuth><Update></Update></RequireAuth>}></Route>
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/register' element={<SignUp></SignUp>}></Route>
       <Route path='/programing' element={<Programing></Programing>}></Route>

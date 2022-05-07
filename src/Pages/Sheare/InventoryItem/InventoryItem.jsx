@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const InventoryItem = (props) => {
-const {name,img,price,quantity,description}=props.service;
+const {name,img,price,quantity,description,_id}=props.service;
+const navigate=useNavigate()
+const handelUpdate=(id) => {
+    navigate(`/update/${_id}`)
+}
     return (
         <div className="">
   <div className="shadow-2xl px-3 py-2 w-80 mx-auto "data-aos="fade-down-right"
@@ -12,7 +16,7 @@ const {name,img,price,quantity,description}=props.service;
             <p>price: ${price}</p>
             <p>quantity: {quantity}</p>
             <p>{description}</p>
-           <Link to='/update' className="btn w-72">Update</Link>
+           <button onClick={() =>handelUpdate(_id)} className="btn w-72">Update</button>
         </div>
         </div>
       
