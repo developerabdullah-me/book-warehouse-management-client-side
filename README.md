@@ -16,17 +16,9 @@
 ## Most use langues & framework
 
 
+* I created the web site ` HTML`  `Css`  `JavaScript` `React js` `MongoDb` `Node js` `React Router ` ` tailwind css` `React toastify` `Animate On Scroll Library` `Swiper The Most Modern Mobile Touch Slider` `daisyUI Tailwind CSS component library` `Tailwind Elements` `Axios`
 
-* HTML
-* Css
-* JavaScript
-* React js
-* React Router 
-* tailwind css
-* Animate On Scroll Library
-* Swiper The Most Modern Mobile Touch Slider
-* daisyUI Tailwind CSS component library
-*  Tailwind Elements
+ 
  ## Authentication
  * firebase authentication
  * Firebase Hooks
