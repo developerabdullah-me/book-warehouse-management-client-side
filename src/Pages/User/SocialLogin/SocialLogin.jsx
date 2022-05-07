@@ -38,7 +38,7 @@ const SocialLogin = () => {
         <div>
            <ToastContainer/>
              <button className=" m-4" stroke="currentColor" onClick={() => signInWithGoogle()}> <img  className="bg-white rounded-full p-1 " src={google} alt="" /> </button>
-            <button className=" m-4" stroke="currentColor"><img className="bg-white rounded-full p-1 " src={facebook} alt="" /></button>
+            <button onClick={() => signInWithFacebook()} className=" m-4" stroke="currentColor"><img className="bg-white rounded-full p-1 " src={facebook} alt="" /></button>
             <button className=" m-4" stroke="currentColor" onClick={() => signInWithGithub
                 ()}> <img  className="bg-white rounded-full p-1 " src={github} alt="" /> </button>
         </div>

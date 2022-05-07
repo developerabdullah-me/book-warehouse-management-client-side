@@ -8,22 +8,20 @@ import axios from 'axios';
 import SingaleMyAddededItems from '../singaleMyAddededItems/SingaleMyAddededItems'
 const MyAddededItems = () => {
 
-
-
     const [user] = useAuthState(auth);
  const [items, setItems] = useState([]);
    const navigate = useNavigate();
-
-
-
-   
     useEffect( () => {
         
         const myAddedItems = async() =>{
             const email = user.email;
             const url = `https://morning-mesa-90595.herokuapp.com/myAddedItems?email=${email}`;
             try{
-                const {data} = await axios.get(url);
+                const {data} = await axios.get(url,{
+                    headers: {
+                        authorization:` Bearer ${localStorage.getItem('accessToken')}`
+                    }
+                });
                 setItems(data);
             }
             catch(error){
@@ -37,6 +35,8 @@ const MyAddededItems = () => {
         myAddedItems();
 
     }, [user])
+
+    
 
     return (
         <div className='px-20'>

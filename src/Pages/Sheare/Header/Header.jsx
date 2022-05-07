@@ -49,15 +49,15 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
 <div className="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent">
 <ul className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto">
  
-  <li className="nav-item px-2">
-    <Link to='/blog' className="nav-link active hover:border-b-4 " aria-current="page">Blog</Link>
-  </li>
- 
-
-{ user && <>
+  
   <li className="nav-item px-2">
     <Link to='/manageInventory' className="nav-link active hover:border-b-4 " aria-current="page">ManageInventory</Link>
   </li>
+
+{ user && <>
+
+ 
+ 
   <li className="nav-item px-2">
     <Link to='/myAddedItems' className="nav-link active hover:border-b-4 " aria-current="page">MyAdded Items</Link>
   </li>
@@ -67,12 +67,11 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
   <li className="nav-item px-2">
     <Link to='/update' className="nav-link active hover:border-b-4 " aria-current="page">Update</Link>
   </li>
-  <li className="nav-item px-2">
-    <Link to='/order' className="nav-link active hover:border-b-4 " aria-current="page">order</Link>
-  </li>
 </>}
 
-
+<li className="nav-item px-2">
+    <Link to='/blog' className="nav-link active hover:border-b-4 " aria-current="page">Blog</Link>
+  </li>
 {/* register */}
     {/* <li className="nav-item pr-2">
     <Link to='/login' className="nav-link text-black hover:text-gray-700 focus:text-gray-700 p-0">Login</Link>
