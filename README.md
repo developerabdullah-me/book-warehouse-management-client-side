@@ -1,6 +1,17 @@
-# live site link 
-# heroku live site link (https://morning-mesa-90595.herokuapp.com/InventoryItems)
+# live site link : https://bookws-warehouse.netlify.app/myAddedItems
+
+# heroku live site link : https://morning-mesa-90595.herokuapp.com/InventoryItems
+
+
+
+# About
+
+
+
+
 ## Most use langues & framework
+
+
 
 * HTML
 * Css
