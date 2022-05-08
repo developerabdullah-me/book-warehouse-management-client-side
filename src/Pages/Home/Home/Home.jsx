@@ -1,4 +1,5 @@
 import React from 'react';
+import Locations from '../../Locations/Locations';
 
 import OurSpecialty from '../../OurSpecialty/OurSpecialty';
 import Banner from '../Banner/Banner';
@@ -10,7 +11,8 @@ const Home = () => {
            
           <Banner></Banner>
           <InventoryItems></InventoryItems>
-          {/* <OurSpecialty></OurSpecialty> */}
+          <OurSpecialty></OurSpecialty>
+          <Locations></Locations>
         
         </div>
     );

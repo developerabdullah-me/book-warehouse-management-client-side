@@ -38,14 +38,33 @@ const MyAddededItems = () => {
 
     
 
+    const productDeleteHandle = (id) => {
+        const proceed = window.confirm("Are you sure?");
+    
+        if (proceed) {
+          const url = `https://morning-mesa-90595.herokuapp.com/InventoryItems/${id}`;
+          fetch(url, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              const remaining = items.filter(
+                (InventoryItems) => InventoryItems._id !== id
+              );
+              setItems(remaining);
+            });
+        }
+      };
+    
+
     return (
         <div className='px-20'>
             
         <h1 className='text-center mx-auto text-4xl mb-5 font-bold border-b-2 border-zinc-600 w-6/12'>My Added Items{items.length}</h1>
         
-<div className='grid md:grid-cols-3 gap-7 sm:grid-cols-3'>
+<div className='grid md:grid-cols-3 gap-7 sm:grid-cols-3' >
    { 
-   items.map(item => <SingaleMyAddededItems item={item} key={item._id}></SingaleMyAddededItems>)
+   items.map(item => <SingaleMyAddededItems item={item} key={item._id}  productDeleteHandle={productDeleteHandle}></SingaleMyAddededItems>)
    }
 </div>
         </div>

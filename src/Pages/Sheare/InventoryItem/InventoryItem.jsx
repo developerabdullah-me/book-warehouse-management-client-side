@@ -14,8 +14,8 @@ const handelUpdate=(id) => {
             <img className="w-96 h-96" src={img} alt="" />
             <h1>Name: {name}</h1>
             <p>price: ${price}</p>
-            <p>quantity: {quantity.slice(0,15)}</p>
-            <p>{description}</p>
+            <p>quantity: {quantity}</p>
+            <p>{description?.slice(0,150)}...</p>
            <button onClick={() =>handelUpdate(_id)} className="btn w-72">Update</button>
         </div>
         </div>

@@ -64,21 +64,16 @@ aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
   <li className="nav-item px-2">
     <Link to='/serviceAdd' className="nav-link active hover:border-b-4 " aria-current="page">serviceAdd</Link>
   </li>
-  <li className="nav-item px-2">
-    <Link to='/update' className="nav-link active hover:border-b-4 " aria-current="page">Update</Link>
-  </li>
+  
 </>}
 
 <li className="nav-item px-2">
     <Link to='/blog' className="nav-link active hover:border-b-4 " aria-current="page">Blog</Link>
   </li>
-{/* register */}
-    {/* <li className="nav-item pr-2">
-    <Link to='/login' className="nav-link text-black hover:text-gray-700 focus:text-gray-700 p-0">Login</Link>
-  </li> */}
+
   <li className="nav-item pr-2">
    { user? (
-     <button  className="nav-link text-black hover:text-gray-700 focus:text-gray-700 p-0" onClick={handelSignOut}>
+     <button  className="nav-link text-red-500 font-bold hover:text-gray-700 focus:text-gray-700 p-0" onClick={handelSignOut}>
      signOut{" "}
    </button>
    ):(

@@ -32,7 +32,7 @@ const Login = () => {
         const email=emailRef.current.value;
         const password=passwordRef.current.value;
         await signInWithEmailAndPassword(email,password)
-        const {data} = await axios.post('http://localhost:5000/login', {email});
+        const {data} = await axios.post('https://morning-mesa-90595.herokuapp.com/login', {email});
         localStorage.setItem('accessToken', data.accessToken);
         navigate(from, { replace: true });
     }
@@ -76,7 +76,7 @@ const Login = () => {
          <input
           ref={passwordRef} className="block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto" type="password" name="password" placeholder="type your password" required/>
          <input
-          className='block bg-slate-100 my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto'  type="submit" value="Login" />
+          className='block btn my-3 py-2 px-2 w-80 pl-4 outline-none mx-auto'  type="submit" value="Login" />
        </form>
       
        </div>

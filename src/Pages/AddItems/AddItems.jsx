@@ -20,23 +20,24 @@ const AddItems = () => {
   })
   .then(response => response.json())
   .then(data => {
-    console.log('Success:', data);
-    toast.success('Success',data)
     
+    toast.success('Success',data)
+   
   })
- 
+  
     }
+    
     return (
      <div className="mx-auto w-full mt-20 py-10">
-<h1 className='text-center text-4xl py-5'>Places Added Your Best Book</h1> 
-     <form className=' grid justify-center' onSubmit={handleSubmit(onSubmit)}>
-      <input className='mb-2 outline-none w-72 bg-slate-100 py-3 px-2 ' placeholder='name' {...register("name" )} />
-      <input className='mb-2 block outline-none w-72 bg-slate-100 py-3 px-2 ' value={user.email} placeholder='email' type="email" {...register("email")} />
-      <input className='mb-2 block outline-none w-72 bg-slate-100 py-3 px-2 ' placeholder='price' type="text" {...register("price")} />
-      <input className='mb-2 block outline-none w-72 bg-slate-100 py-3 px-2 ' placeholder='quantity' type="text" {...register("quantity")} />
-      <input className='mb-2 block outline-none w-72 bg-slate-100 py-3 px-2 ' placeholder='img' type="text" {...register("img")} />
-      <textarea className='mb-2 block  w-72 h-12 border-2 outline-none' placeholder='description' {...register("description", )} />
-      <input className='mb-2 block   w-72 bg-slate-100 py-3 px-2 ' value='Add Product' type="submit" />
+<h1 className='text-center text-4xl py-5 text-cyan-600'>Places Added Your Best Book</h1> 
+     <form className=' grid justify-center shadow-lg md:w-1/3 mx-auto py-6' onSubmit={handleSubmit(onSubmit)}>
+      <input className='mb-5 outline-none w-72 outline-gray-900 py-3 px-2 ' placeholder='name' {...register("name" )} required/>
+      <input className='mb-5 block outline-none w-72 outline-gray-900 py-3 px-2 ' value={user.email} placeholder='email' type="email" {...register("email")}required />
+      <input className='mb-5 block outline-none w-72 outline-gray-900 py-3 px-2 ' placeholder='price' type="text" {...register("price")} required/>
+      <input className='mb-5 block outline-none w-72 outline-gray-900 py-3 px-2 ' placeholder='quantity' type="number" {...register("quantity")} required/>
+      <input className='mb-5 block outline-none w-72 outline-gray-900 py-3 px-2 ' placeholder='img' type="text" {...register("img")} required/>
+      <textarea className='mb-5 block outline-gray-900 w-72 h-12 border-2 outline-none' placeholder='description' {...register("description", )} required/>
+      <input className='mb-5 block cursor-pointer btn w-72 py-3 px-2 ' value='Add Product' type="submit" />
     </form>
         </div>
     );

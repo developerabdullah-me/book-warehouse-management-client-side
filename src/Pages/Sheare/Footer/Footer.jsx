@@ -22,6 +22,10 @@ const Footer = () => {
       <a className="bg-white w-8 rounded-full" src="" href="https://github.com/developerabdullah-me"> <img src={github} alt="" /> </a> 
      
     </div>
+    <div className="">
+                  <span className="d-block font-bold text-red-500">call Now: </span>
+                 <span className="d-block text-blue-700"><a href="tel:+88 01779-358821">+88 01779-358821</a></span>
+               </div>
   </div> 
   <div>
   <p>Copyright © All right reserved by developerabdullah-me{(new Date().getFullYear())}</p>

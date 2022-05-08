@@ -82,17 +82,12 @@ const Blog = () => {
     transition
     focus:outline-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
         aria-expanded="false" aria-controls="flush-collapseThree">
-        Accordion Item #3
+       What is the purpose of Jwt and how does it work?
       </button>
     </h2>
     <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree"
       data-bs-parent="#accordionFlushExample">
-      <div className="accordion-body py-4 px-5">Placeholder content for this accordion, which is intended to
-        demonstrate
-        the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-        happening here in terms of content, but just filling up the space to make it look, at least at first
-        glance,
-        a bit more representative of how this would look in a real-world application.</div>
+      <div className="accordion-body py-4 px-5"><strong>JWT (জাভাস্ক্রিপ্ট অবজেক্ট নোটেশন), বা JSON ওয়েব টোকেন,</strong> হল একটি উন্মুক্ত মান যা ক্লায়েন্ট এবং সার্ভারের মধ্যে নিরাপত্তা তথ্য ভাগ করে নেওয়ার জন্য ব্যবহৃত হয়, সংক্ষেপে JWT ব্যবহারকারীদের প্রমাণীকরণ এবং তথ্য ভাগ করার একটি নিরাপদ উপায় হিসাবে ব্যবহৃত হয়। প্রতিটি JWT-এ এনকোড করা JSON অবজেক্ট রয়েছে, যার মধ্যে দাবির সেট রয়েছে। টোকেন ইস্যু করার পরে দাবিগুলি পরিবর্তন করা যাবে না তা নিশ্চিত করার জন্য একটি ক্রিপ্টোগ্রাফিক অ্যালগরিদম ব্যবহার করে JWTs স্বাক্ষরিত হয়।</div>
     </div>
   </div>
 </div>

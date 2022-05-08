@@ -1,40 +1,100 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 
 const Update = () => {
 
-    const { Id } = useParams()
-console.log(Id);
-    const [product, setProduct] = useState({})
+  const { Id } = useParams();
+  const [product, setProduct] = useState({});
+  const [newQuantity, setNewQuantity] = useState(0)
+  const { img, name, description, price, quantity } = product;
 
-    const { img, name, description, price, quantity } = product;
+  useEffect(() => {
+    fetch(`https://morning-mesa-90595.herokuapp.com/InventoryItems/${Id}`)
+      .then(res => res.json())
+      .then(data =>{ 
+          
+        setProduct(data) 
+        setNewQuantity(data.quantity)
+    });
+  }, []);
 
-    useEffect(() => {
-        fetch(`https://morning-mesa-90595.herokuapp.com/InventoryItems/${Id}`)
+  const handleQuantityUpdate = event => {
+    event.preventDefault()
+
+    const restock = event.target.restock.value
+
+    const updatedData = + restock + newQuantity
+    setNewQuantity(updatedData)
+    const url = `https://morning-mesa-90595.herokuapp.com/InventoryItems/${Id}`
+
+    fetch(url, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({ updatedData })
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        
+        // alert('quantity updatted')
+    })
+event.target.reset()
+}
+
+// delevary
+
+const handleDelivery = () => {
+
+    if (newQuantity > 0) {
+        const updatedData = newQuantity - 1
+        setNewQuantity(updatedData)
+        const url = `https://morning-mesa-90595.herokuapp.com/InventoryItems/${Id}`
+
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ updatedData })
+        })
             .then(res => res.json())
-            .then(data => setProduct(data))
-    },[])
-    return (
-        <div>
-          <div className="shadow-lg w-80  mx-auto p-5 mb-7">
-         <div className=" ">
-         <img className="w-32 mx-auto rounded" src={img} alt="" />
-             <div className="text-center">
-             <h1> {name} </h1>
-              <p> quantity: {quantity }</p>
-              <p>price:{price}</p>
-               
-              <p> Add quantity : <input className='w-1/3' type="number" p /></p>
-             </div>
-         </div>
-           <div className=" flex justify-around mt-3">
-           <button className='btn'>Delivery</button>
-           <button className='btn'>Add quantity</button>
-           </div>
+            .then(data => {
+                console.log(data);
+                // set(data)
+                // alert('quantity updatted')
+            })
+    }
+
+}
+  return (
+    <div>
+      <div className="shadow-lg w-80  mx-auto p-5 mb-7">
+        <div className=" ">
+          <img className="w-32 mx-auto rounded" src={img} alt="" />
+          <div className="text-center">
+            <h1> {name} </h1>
+            <p> quantity: {newQuantity}</p>
+            <p>price:{price}</p>
+
+            <form onSubmit={handleQuantityUpdate}>
+            <input className="w-24 py-3 mr-2 bg-slate-300"  type="number"  name='restock' placeholder='newQuantity' required/>
+            <button className="btn">Add quantity</button>
+            </form>
+
           </div>
         </div>
-    );
+        <div className=" flex justify-around mt-3">
+          <button onClick={handleDelivery} className="btn">
+            Delivery
+          </button>
+          
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Update;

@@ -35,7 +35,7 @@ const OurSpecialty = () => {
             InventoryItems.slice(0,6).map(service =>  <SwiperSlide className="shadow-2xl mt-11 mb-10  hover:shadow-lg cursor-pointer" service={service._id}>
                
                <div className="pb-16">
-               <img src={service.img} alt="" />
+               <img className="w-96 h-96 "src={service.img} alt="" />
                <p>{service.name}</p>
                <p>$ <small>{service.price}</small></p>
                 
